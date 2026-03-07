@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+
+    <!-- GitHub Frontmatter (Improves SEO) -->
+    {% assign canonical_url = page.url | remove: '.html' | absolute_url %}
+    {% assign raw_description = page.description | default: page.excerpt | default: site.description %}
+    {% assign seo_description = raw_description | strip_html | strip_newlines | replace: '  ', ' ' | replace: '  ', ' ' | strip | truncate: 160 %}
+    {% assign seo_description_attr = seo_description | escape_once %}
+    {% assign seo_title = site.title %}
+    {% if page.title and page.title != site.title %}
+        {% assign seo_title = page.title | append: ' | ' | append: site.title %}
+    {% endif %}
+    {% assign seo_title_attr = seo_title | escape_once %}
+    {% assign og_type = page.og_type | default: "article" %}
+    <!-- End GitHub Frontmatter -->
+
+    <title>{{ seo_title_attr }}</title>
+
+    <meta name="description" content="{{ seo_description_attr }}">
+
+    <meta property="og:type" content="{{ og_type }}">
+    <meta property="og:site_name" content="{{ site.title | escape_once }}">
+    <meta property="og:title" content="{{ seo_title_attr }}">
+    <meta property="og:description" content="{{ seo_description_attr }}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    {% if page.image %}
+        <meta property="og:image" content="{{ page.image | absolute_url }}">
+    {% elsif site.og_image %}
+        <meta property="og:image" content="{{ site.og_image | absolute_url }}">
+    {% endif %}
+
+    <meta name="twitter:card" content="{% if page.image or site.og_image %}summary_large_image{% else %}summary{% endif %}">
+    <meta name="twitter:title" content="{{ seo_title_attr }}">
+    <meta name="twitter:description" content="{{ seo_description_attr }}">
+    {% if page.image %}
+        <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+    {% elsif site.og_image %}
+        <meta name="twitter:image" content="{{ site.og_image | absolute_url }}">
+    {% endif %}
+
+    <link rel="stylesheet" type="text/css" href="assets/css/neat.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+</head>
+
+<body>
+
+    {% if page.url != "/" and page.url != "/subscribe.html" %}
+        <a class="menu" href="/menu">&equiv;</a>
+    {% endif %}
+
+    {{ content }}
+
+    <hr style="margin-top: 2em;">
+
+    <p class="center" style="margin-top: 3em; opacity: 0.4;">Copyright © 2026</p>
+
+</body>
+
+</html>
