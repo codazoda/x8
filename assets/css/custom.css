@@ -2,3 +2,7 @@
 :root {
     border-top: none;
 }
+
+hr {
+    opacity: 0.4;
+}
