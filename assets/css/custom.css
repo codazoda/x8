@@ -1,1 +1,4 @@
 /* Put your custom CSS rules here */
+:root {
+    border-top: none;
+}
