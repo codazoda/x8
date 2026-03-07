@@ -51,8 +51,8 @@
 
 <body>
 
-    {% if page.url != "/" and page.url != "/subscribe.html" %}
-        <a class="menu" href="/menu">&equiv;</a>
+    {% if page.url != "/" %}
+        <a class="home" href="/">↖</a>
     {% endif %}
 
     {{ content }}
