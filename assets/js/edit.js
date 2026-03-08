@@ -29,10 +29,18 @@
     document.body.appendChild(container);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", createLocalLink);
-  } else {
-    createLocalLink();
+  function hasOwnerCookie() {
+    return document.cookie.split(";").some(function (c) {
+      return c.trim() === "owner=1";
+    });
+  }
+
+  if (hasOwnerCookie()) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", createLocalLink);
+    } else {
+      createLocalLink();
+    }
   }
 })();
 </script>
