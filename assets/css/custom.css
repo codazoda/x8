@@ -15,3 +15,7 @@ nav {
 nav a {
     color: var(--dark);
 }
+
+footer {
+    opacity: 0.4;
+}
