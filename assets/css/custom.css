@@ -9,4 +9,9 @@ hr {
 
 nav {
     text-align: center;
+    opacity: .4;
+}
+
+nav.a {
+    opacity: 1;
 }
