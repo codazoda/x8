@@ -1,3 +1,3 @@
 # About Me
 
-This is a little information about me.
+I haven't filled out this page yet.
