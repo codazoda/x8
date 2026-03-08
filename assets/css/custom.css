@@ -19,3 +19,9 @@ nav a {
 footer {
     opacity: 0.4;
 }
+
+creator {
+    text-align: center;
+    font-size: .75em;
+    opacity: 0.25;
+}s
