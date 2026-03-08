@@ -1,6 +1,7 @@
-# My Website Newsletter
+# My Website
 
-This is my website newsletter. It was created with x8, a unique markdown based template and local file editor.
+This is my website.
 
 - [Example Article](example-article.md)
-- [Amout Me](about.md)
+
+Note: Edit your `_laouts/default.html` file to edit the links at the top of the page. Add articles to your index.md file manually.
