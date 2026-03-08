@@ -1,8 +1,10 @@
 <script>
 (function () {
+  const port = 8020;
+
   function createLocalLink() {
     const path = window.location.pathname;
-    const url = "http://localhost:8020" + path;
+    const url = "http://localhost:" + port + path;
 
     const container = document.createElement("div");
     container.style.position = "fixed";
