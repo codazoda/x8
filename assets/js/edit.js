@@ -1,4 +1,3 @@
-<script>
 (function () {
   const port = 8020;
 
@@ -45,4 +44,3 @@
     }
   }
 })();
-</script>
