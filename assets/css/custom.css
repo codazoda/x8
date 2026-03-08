@@ -3,6 +3,10 @@
     border-top: none;
 }
 
+a {
+    color: dodgerblue;
+}
+
 hr {
     opacity: 0.4;
 }
